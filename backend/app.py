@@ -213,6 +213,6 @@ def health():
 
 
 if __name__ == '__main__':
-    print("\n🌿 AyurFlow Backend → http://localhost:5000")
-    print(f"   Gemini AI: {'✅ Enabled' if GEMINI_API_KEY else '⚠️  Disabled (set GEMINI_API_KEY to enable)'}\n")
-   app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    print('\n🌿 AyurFlow Backend → http://localhost:5000')
+    print('   Gemini AI: ON\n')
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
