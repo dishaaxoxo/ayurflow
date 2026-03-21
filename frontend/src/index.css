@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #FCFBF9; /* Pristine creamy white background */
+  --color-brand-card: #FFFFFF;
+  --color-brand-glass: rgba(255, 255, 255, 0.75);
+  --color-brand-text: #2D3748; /* darker gray */
+  --color-brand-text-dim: #4A5568; 
+  
+  --color-brand-accent: #6C8E75; /* sharper, deeper sage */
+  --color-brand-accent-glow: rgba(108, 142, 117, 0.25);
+  --color-brand-green: #43655A;
+  --color-brand-green-dim: rgba(67, 101, 90, 0.12);
+  --color-brand-surface: #E2E8F0; 
+  
+  /* Sharper Pastel Doshas */
+  --color-dosha-vata: #82C0E7; /* sharper blue */
+  --color-dosha-pitta: #EFA683; /* steeper peach */
+  --color-dosha-kapha: #89C7AD; /* vibrant mint */
+  --color-dosha-tridosha: #C59A94; /* rose lavender */
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  cursor: none; /* hide default cursor */
+}
+
+a, button, input, textarea, select {
+  cursor: none;
+}
+
+/* Glassmorphism for Light Theme */
+.glass-panel {
+  background: var(--color-brand-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(132, 169, 140, 0.08);
+}
+
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(132, 169, 140, 0.15);
+  border-color: rgba(132, 169, 140, 0.4);
+}
+
+/* Custom scrollbar - Light */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(132, 169, 140, 0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(132, 169, 140, 0.4); }
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-stagger-enter {
+  opacity: 0;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Beautiful Animated Aurora Blobs */
+@keyframes blob-bounce {
+  0% { transform: scale(1) translate(0px, 0px); }
+  33% { transform: scale(1.1) translate(30px, -50px); }
+  66% { transform: scale(0.9) translate(-20px, 20px); }
+  100% { transform: scale(1) translate(0px, 0px); }
+}
+
+.animate-blob {
+  animation: blob-bounce 15s infinite alternate ease-in-out;
+}
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
