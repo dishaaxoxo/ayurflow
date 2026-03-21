@@ -12,7 +12,7 @@ export default function AIConsultModal({ onClose, onAdd, translate, onSelectHerb
     if (!symptoms.trim()) return
     setLoading(true)
     try {
-      const res = await fetch('/api/recommend', {
+      const res = await fetch('https://ayurflow-backend.onrender.com/api/recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ symptoms })

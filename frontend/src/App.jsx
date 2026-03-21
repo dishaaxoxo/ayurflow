@@ -28,7 +28,7 @@ function App() {
   const [selectedHerb, setSelectedHerb] = useState(null)
 
   useEffect(() => {
-    fetch('/api/metadata').then(r => r.json()).then(setMetadata)
+    fetch('https://ayurflow-backend.onrender.com/api/metadata')
   }, [])
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function App() {
     if (dosha !== 'all') params.append('dosha', dosha)
     if (age !== 'all') params.append('age', age)
     
-    fetch(`/api/herbs?${params.toString()}`)
+    fetch(`https://ayurflow-backend.onrender.com/api/herbs?${params.toString()}`)
       .then(r => r.json())
       .then(data => {
         setHerbs(data)
