@@ -9,9 +9,9 @@ export default defineConfig({
     proxy: {
       // All /api/* calls from React dev server → Flask on :5000
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://ayurflow-backend.onrender.com',
         changeOrigin: true,
-        secure: false,
+        secure: true,
       }
     }
   }
